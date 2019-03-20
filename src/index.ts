@@ -1,9 +1,9 @@
 import { AutoSerialize } from "./auto-serialize.deco";
-import { AbstractSerialize } from "./abstract-serialize";
+import { AbstractSerializer } from "./abstract-serialize";
 import { MapTo } from "./map-to.deco";
 
 @AutoSerialize
-export class Address extends AbstractSerialize {
+export class Address extends AbstractSerializer {
 
     house = '123';
     street = 'xyz';
@@ -19,7 +19,7 @@ export class Address extends AbstractSerialize {
 }
 
 @AutoSerialize
-export class Todo extends AbstractSerialize {
+export class Todo extends AbstractSerializer {
 
     id: number = null;
     text: string = 'First';
@@ -44,16 +44,16 @@ const todo = new Todo().setValues({
         house: 'new house',
         street: 'new street',
     },
-    list: [
-        {
-            house: 'new house',
-            street: 'new street',
-        },
-        {
-            house: 'new house',
-            street: 'new street',
-        },
-    ]
+    // list: [
+    //     {
+    //         house: 'new house',
+    //         street: 'new street',
+    //     },
+    //     {
+    //         house: 'new house',
+    //         street: 'new street',
+    //     },
+    // ]
 }) as Todo;
 
 console.log(todo.getValues());

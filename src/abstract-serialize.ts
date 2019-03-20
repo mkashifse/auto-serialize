@@ -1,6 +1,5 @@
-import { Attribute } from "./attribute.interface";
 
-export class AbstractSerialize {
-    setValues(value: any): AbstractSerialize { return this; };
+export class AbstractSerializer {
+    setValues(value: any): AbstractSerializer { return this; };
     getValues() { }
 }

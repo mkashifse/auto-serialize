@@ -1,5 +1,3 @@
-import { AbstractSerialize } from "./abstract-serialize";
-import { Attribute } from "./attribute.interface";
 
 export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor: T) {
     return class extends constructor {
@@ -11,7 +9,11 @@ export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor
             if (keys) {
                 keys.forEach((item: any) => {
                     if (item.type.length) {
-                        (<any>this)[item.key] = values[item.key].map((li: any) => new item.type[0]().setValues(li))
+                        if (values[item.key]) {
+                            (<any>this)[item.key] = values[item.key].map((li: any) => new item.type[0]().setValues(li))
+                        } else {
+                            (<any>this)[item.key] = []
+                        }
                     } else {
                         (<any>this)[item.key] = new item.type().setValues(values[item.key]);
                     }

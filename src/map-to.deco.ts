@@ -1,9 +1,9 @@
-import { AbstractSerialize } from "./abstract-serialize";
+import { AbstractSerializer } from "./abstract-serialize";
 
 
 // MapTo decorator
 export function MapTo(type: any = null, mapto: string = null, handler: (data: any) => any = null) {
-    return function (target: AbstractSerialize, key: string) {
+    return function (target: AbstractSerializer, key: string) {
         if (!('__KEYS__' in target)) {
             (<any>target)['__KEYS__'] = [];
         }
