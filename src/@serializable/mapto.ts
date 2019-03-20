@@ -1,4 +1,4 @@
-import { AbstractSerializer } from "./abstract-serialize";
+import { AbstractSerializer } from "./abstract-serializer";
 
 
 // MapTo decorator

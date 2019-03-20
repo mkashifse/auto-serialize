@@ -1,5 +1,5 @@
 
-export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor: T) {
+export function Serializable<T extends { new(...args: any[]): {} }>(constructor: T) {
     return class extends constructor {
 
         setValues(values: any) {
