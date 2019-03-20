@@ -1,7 +1,7 @@
-import { Serializable, AbstractSerializer, MapTo } from "./@serializable/index";
+import { AbstractSerializer, MapTo, AutoSerialize } from './@auto-serialize/index';
 
 
-@Serializable
+@AutoSerialize
 export class Address extends AbstractSerializer {
 
     house = '123';
@@ -17,7 +17,7 @@ export class Address extends AbstractSerializer {
     }
 }
 
-@Serializable
+@AutoSerialize
 export class Todo extends AbstractSerializer {
 
     id: number = null;
