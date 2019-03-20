@@ -1,7 +1,7 @@
 {
-  "name": "auto-serialize",
+  "name": "serializable",
   "version": "1.0.0",
-  "description": "A descent way to serialize javascript models",
+  "description": "A descent way to serialize your Typescript models",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -15,6 +15,7 @@
   },
   "keywords": [
     "auto-serialize",
+    "serializable",
     "serialize",
     "tojson"
   ],
