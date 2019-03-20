@@ -110,6 +110,6 @@ const json = {
     ids: [1, 2, 3, 4, 4],
 }
 
-const todo = new Todo().setValues() as Todo;
+const todo = new Todo().setValues(json) as Todo;
 console.log(todo.getValues());
 ```
