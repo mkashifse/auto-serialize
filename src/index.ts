@@ -24,8 +24,8 @@ export class Todo extends AbstractSerialize {
     id: number = null;
     text: string = 'First';
     desc: string = 'first todo description';
-    list: string[] = ['abc', 'ssc', 'sds'];
     @MapTo(Address) address: Address = new Address();
+    @MapTo([Address]) list: Address[] = [];
 
     constructor() {
         super();
@@ -39,10 +39,21 @@ export class Todo extends AbstractSerialize {
 }
 
 const todo = new Todo().setValues({
-    text: 'again', address: {
-        house:'new house',
-        street:'new street',
-    }
+    text: 'again',
+    address: {
+        house: 'new house',
+        street: 'new street',
+    },
+    list: [
+        {
+            house: 'new house',
+            street: 'new street',
+        },
+        {
+            house: 'new house',
+            street: 'new street',
+        },
+    ]
 }) as Todo;
 
-console.log(todo.address.fullAddress());
+console.log(todo.getValues());

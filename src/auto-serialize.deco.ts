@@ -10,7 +10,11 @@ export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor
             const keys = (<any>parent)['__KEYS__'];
             if (keys) {
                 keys.forEach((item: any) => {
-                    (<any>this)[item.key] = new item.type().setValues(values[item.key]);
+                    if (item.type.length) {
+                        (<any>this)[item.key] = values[item.key].map((li: any) => new item.type[0]().setValues(li))
+                    } else {
+                        (<any>this)[item.key] = new item.type().setValues(values[item.key]);
+                    }
                 });
             }
             return this;
