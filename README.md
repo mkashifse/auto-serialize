@@ -1,5 +1,5 @@
 # @Serializable
-A decent way to serialize your models.
+A decent way to serialize your Typescript models.
 
 ## Installation
 `npm install @serializable`
