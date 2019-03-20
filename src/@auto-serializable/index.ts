@@ -1,14 +1,14 @@
 export * from './abstract-serializer';
-export * from './serializable';
+export * from './auto-serializable';
 export * from './mapto';
 
 import { AbstractSerializer } from './abstract-serializer';
-import { Serializable } from './serializable';
+import { AutoSerialize } from './auto-serializable';
 import { MapTo } from './mapto';
 
 
 export default {
     AbstractSerializer,
-    Serializable,
+    AutoSerialize,
     MapTo,
 }

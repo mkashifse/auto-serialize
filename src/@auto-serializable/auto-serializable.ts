@@ -1,7 +1,7 @@
 import { IAttribute } from "./attribute.interface";
 import { AbstractSerializer } from "./abstract-serializer";
 
-export function Serializable<T extends { new(...args: any[]): {} }>(constructor: T) {
+export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor: T) {
     return class extends constructor {
 
         setValues(values: any) {

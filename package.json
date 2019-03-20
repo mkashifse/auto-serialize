@@ -1,5 +1,5 @@
 {
-  "name": "serializable",
+  "name": "auto-serialize",
   "version": "1.0.0",
   "description": "A descent way to serialize your Typescript models",
   "main": "index.js",
