@@ -1,14 +1,14 @@
-# @Serializable
+# @AutoSerialize
 A decent way to serialize your Typescript models.
 
 ## Installation
-`npm install @serializable`
+`npm install @auto-serialize`
 
 ## How to use
-Its is very simple to use. Just add `@Serializable` decorotor to your model class and extend it from `AbstractSerializer` class.
+Its is very simple to use. Just add `@AutoSerialize` decorotor to your model class and extend it from `AbstractSerializer` class.
 
 ```
-@Serializable
+@AutoSerialize
 export class Address extends AbstractSerializer {
     ...
     ...
@@ -46,10 +46,10 @@ For array you just put the class type in array like `@MapTo({ type: [Address] })
 ## Whole Code
 
 ```
-import { Serializable, AbstractSerializer, MapTo } from "./@serializable";
+import { AutoSerialize, AbstractSerializer, MapTo } from "./@auto-serialize";
 
 
-@Serializable
+@AutoSerialize
 export class Address extends AbstractSerializer {
 
     house = '123';
@@ -70,7 +70,7 @@ export class Address extends AbstractSerializer {
 
 
 ```
-@Serializable
+@AutoSerialize
 export class Todo extends AbstractSerializer {
 
     id: number = null;
