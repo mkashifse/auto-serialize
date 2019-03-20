@@ -24,8 +24,8 @@ export class Todo extends AbstractSerializer {
     text: string = 'First';
     desc: string = 'first todo description';
     ids: number[] = [];
-    @MapTo(Address) address: Address = new Address();
-    @MapTo([Address]) list: Address[] = [];
+    @MapTo({ type: Address }) address: Address = new Address();
+    @MapTo({ type: [Address] }) list: Address[] = [];
 
     constructor() {
         super();
@@ -54,7 +54,7 @@ const todo = new Todo().setValues({
             street: 'new street',
         },
     ],
-    ids:[1,2,3,4,4],
+    ids: [1, 2, 3, 4, 4],
 }) as Todo;
 
 console.log(todo.getValues());

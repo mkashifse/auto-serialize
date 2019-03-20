@@ -1,6 +1,7 @@
 
-export interface Attribute {
-    type: any;
-    key: any;
-    mapto: string;
+export interface IAttribute {
+    type?: Function | [Function];
+    key?: any;
+    mapto?: string;
+    handler?: Function;
 }

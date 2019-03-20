@@ -1,8 +1,10 @@
 import { AbstractSerializer } from "./abstract-serializer";
+import { IAttribute } from "./attribute.interface";
 
 
 // MapTo decorator
-export function MapTo(type: any = null, mapto: string = null, handler: (data: any) => any = null) {
+export function MapTo(attr: IAttribute = { type: null, mapto: null, handler: null }) {
+    const { type, handler, mapto } = attr;
     return function (target: AbstractSerializer, key: string) {
         if (!('__KEYS__' in target)) {
             (<any>target)['__KEYS__'] = [];
@@ -12,6 +14,7 @@ export function MapTo(type: any = null, mapto: string = null, handler: (data: an
             type,
             key,
             mapto,
+            handler
         });
     };
 }
