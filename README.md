@@ -1,15 +1,49 @@
-# auto-serialize
-A decent way to serialize your models
+# @Serializable
+A decent way to serialize your models.
 
 ## Installation
-`npm install auto-serialize`
+`npm install @serializable`
 
 ## How to use
-Its is very simple to user just add `@Serializable` decorotor to your model class and extend it from `AbstractSerializer` class.
+Its is very simple to use. Just add `@Serializable` decorotor to your model class and extend it from `AbstractSerializer` class.
 
-Now your can use just to call `setValues()` & `getValues`
+```
+@Serializable
+export class Address extends AbstractSerializer {
+    ...
+    ...
+}
+```
+
+Now you can use `setValues(json)` & `getValues()` to serialize and deserialzie you objects like.
+```
+const address = new Address().setValues(json);
+address.getValues();
+```
 
 
+### Attribute of class attr:Class?
+Yes you can also convert attribute of a class object. Just you need to add `MapTo` attribute decorator and define type like
+
+```
+...
+ 
+  @MapTo({ type: Address }) address:Address = new Address();
+
+```
+
+### Attribute of type Array of class object attr:Class[]?
+For array you just put the class type in array like `@MapTo({ type: [Address] })`
+
+```
+...
+ 
+  @MapTo({ type: [Address] }) addressList:Address = [];
+
+```
+
+
+## Whole Code
 
 ```
 import { Serializable, AbstractSerializer, MapTo } from "./@serializable";
@@ -33,8 +67,7 @@ export class Address extends AbstractSerializer {
 ```
 
 
-### Array of Class Objects?
-Yes it also convert an array of a class objects jus you need to add `MapTo` attribute decorator and define type for simple class object user `@MapTo({ type: Address })` for array just put the class type in array like `@MapTo({ type: [Address] })`
+
 
 ```
 @Serializable
@@ -58,7 +91,7 @@ export class Todo extends AbstractSerializer {
     }
 }
 
-const todo = new Todo().setValues({
+const json = {
     text: 'again',
     address: {
         house: 'new house',
@@ -75,7 +108,8 @@ const todo = new Todo().setValues({
         },
     ],
     ids: [1, 2, 3, 4, 4],
-}) as Todo;
+}
 
+const todo = new Todo().setValues() as Todo;
 console.log(todo.getValues());
 ```
