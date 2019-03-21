@@ -38,7 +38,9 @@ export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor
                     }
                 });
             }
+
             return values;
         }
+
     }
 }

@@ -1,5 +1,5 @@
 
 export class AbstractSerializer {
     setValues(value: any): AbstractSerializer { return this; };
-    getValues() { }
+    getValues(): any { }
 }
