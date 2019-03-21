@@ -1,13 +1,13 @@
 {
   "name": "auto-serialize",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A descent way to serialize your Typescript models",
-  "main": "index.js",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",
     "watch": "npm run build -- --watch",
-    "start": "nodemon -w webpack.config.js -x webpack-dev-server",
+    "start": "webpack & nodemon -w webpack.config.js -x webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
