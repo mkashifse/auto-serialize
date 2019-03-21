@@ -1,6 +1,6 @@
 
 export interface IAttribute {
-    type?: Function | [Function];
+    type?: Function | [Function] | undefined | null;
     key?: any;
     mapto?: string;
     handler?: Function;

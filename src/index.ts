@@ -20,7 +20,7 @@ export class Address extends AbstractSerializer {
 @AutoSerialize
 export class Todo extends AbstractSerializer {
 
-    id: number = null;
+    id: number = 0;
     text: string = 'First';
     desc: string = 'first todo description';
     ids: number[] = [];

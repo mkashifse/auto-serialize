@@ -3,7 +3,7 @@ import { IAttribute } from "./attribute.interface";
 
 
 // MapTo decorator
-export function MapTo(attr: IAttribute = { type: null, mapto: null, handler: null }) {
+export function MapTo(attr: IAttribute = { type: null, mapto: '', handler: () => { } }) {
     const { type, handler, mapto } = attr;
     return function (target: AbstractSerializer, key: string) {
         if (!('__KEYS__' in target)) {

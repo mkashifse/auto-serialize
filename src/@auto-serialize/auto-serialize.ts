@@ -31,7 +31,7 @@ export function AutoSerialize<T extends { new(...args: any[]): {} }>(constructor
             if (keys) {
                 keys.forEach((item: IAttribute) => {
                     const attr = (<any>this)[item.key];
-                    if (item.type.length) {
+                    if (item.type && item.type.length) {
                         values[item.key] = attr.map((li: AbstractSerializer) => li.getValues());
                     } else {
                         values[item.key] = attr.getValues();
