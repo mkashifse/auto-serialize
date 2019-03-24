@@ -2,7 +2,7 @@
   "name": "auto-serialize",
   "version": "1.0.5",
   "description": "A descent way to serialize your Typescript models",
-  "main": "dist/index.js",
+  "main": "dist/index",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",
@@ -14,6 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/mkashifse/auto-serialize.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "auto-serialize",
     "serializable",
