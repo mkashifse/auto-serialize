@@ -7,7 +7,7 @@ import { AutoSerialize } from './auto-serialize';
 import { MapTo } from './mapto';
 
 
-export default {
+export {
     AbstractSerializer,
     AutoSerialize,
     MapTo,
