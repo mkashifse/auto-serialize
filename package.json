@@ -1,8 +1,8 @@
 {
   "name": "auto-serialize",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A descent way to serialize your Typescript models",
-  "main": "dist/index",
+  "main": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "webpack",

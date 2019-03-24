@@ -57,4 +57,4 @@ const todo = new Todo().setValues({
     ids: [1, 2, 3, 4, 4],
 }) as Todo;
 
-console.log(todo.getValues().map((resp: any) => resp));
+console.log(todo);
